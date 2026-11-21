@@ -261,6 +261,15 @@ def main():
             t(dup[0]["ts"]) - t(prev[0]["ts"]) < timedelta(hours=24)
     c.check("S6: one pack scanned in two distant countries within 24 h", ok)
 
+    # ---------------- tutorial pages (rendered from generator/tutorial_templates)
+    tdir = os.path.join(args.data, "tutorial")
+    pages = sorted(f for f in os.listdir(tdir) if f.endswith(".md")) if os.path.isdir(tdir) else []
+    text = "".join(open(os.path.join(tdir, f), encoding="utf-8").read() for f in pages)
+    c.check("Tutorial: all pages rendered, no placeholders left", len(pages) == 9 and "{{" not in text,
+            f"{len(pages)} pages")
+    if m:
+        c.check("Tutorial: S4 pack UID matches README_data.md", uid in text, uid)
+
     print(f"\n{'All checks passed.' if c.failures == 0 else f'{c.failures} check(s) failed.'}")
     sys.exit(1 if c.failures else 0)
 

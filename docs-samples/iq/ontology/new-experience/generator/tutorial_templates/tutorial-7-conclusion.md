@@ -1,0 +1,58 @@
+# Track & Trace ontology tutorial part 7: Conclude and clean up
+
+In this tutorial, you modeled a Track & Trace operation in which packs are serialized, aggregated into bundles,
+shipping cases and pallets, shipped to markets and reported to tax authorities. You created an ontology with
+bound data and business context, explored it with the canvas, the entity instances and the graph, and answered
+the scenario's questions with the ontology agent. Then you built data agents and a Copilot agent on top of it,
+and rehearsed a demo in which an aggregation error, a delayed truck, an authority rejection and a stock risk are
+connected in one conversation.
+
+## What the demo showed
+
+| Takeaway | Shown in |
+|---|---|
+| How Fabric data agents work over Track & Trace data | Scenes 2 and 4 |
+| Why semantic business context (ontology, IQ) matters | Scene 2, built in part 2 |
+| How Copilot becomes the UI for multiple, composable agents | Scenes 1, 5 and 6 |
+| How Track & Trace connects with supply chain and work context | Scenes 3 and 5 |
+| How AI supports decisions, not just answers questions | Scenes 5 and 6 |
+
+## Open points to validate
+
+The scenario rests on assumptions. Validate them with the business process owners before the session, and use
+them as questions to the audience at the end.
+
+1. Is pack → bundle → shipping case → pallet valid for all markets?
+1. Which exception types are most common day to day? Scenarios S1 to S6 are assumptions.
+1. Which roles do which tasks (operations expert, engineer, service manager)?
+1. Which Track & Trace data already lives in the serialization vendor's Fabric environment, and which data agent
+   capabilities could be enabled there?
+1. Is the consumer scan scenario (S6) appropriate to show?
+1. Which supply chain signals matter most for closing the loop?
+
+The design choices of the data set (scale, packaging ratios, units, the five-day unit-level window) are in
+[`README_data.md`](../README_data.md#design-choices-to-know-before-you-demo).
+
+## Clean up resources
+
+When you finish, delete the resources you created.
+
+1. Delete your Fabric workspace under **Workspace settings > Remove this workspace**. This deletes everything in
+   it: the lakehouse, the eventhouse, the semantic model, the ontology (preview) item with its graph model, and
+   both data agents. If you published a data agent to the Agent Store, check that it's gone from Microsoft 365
+   Copilot.
+1. In Copilot Studio, delete the *Track and Trace Copilot* agent.
+1. Delete the *T&T Incidents (mock ITSM)* list, the Planner plan, and the SOP files you uploaded.
+1. Remove the imported emails, the drafts and any Teams posts from the demo user's Microsoft 365, or delete the
+   demo user if you created one for this tutorial.
+1. Remove the sample data files you downloaded from your local machine.
+
+## Next steps
+
+To adapt the scenario, change the generator (`generator/generate_data.py`) or the templates of these pages
+(`generator/tutorial_templates/`) and run the generator again. `generator/validate_data.py` checks that the six
+scenarios and the data-quality rules still hold.
+
+To learn more about the features used here, see the
+[ontology (preview) documentation](https://learn.microsoft.com/fabric/iq/ontology/overview) and
+[agent integration options for ontology](https://learn.microsoft.com/fabric/iq/ontology/concepts-agent-integration).

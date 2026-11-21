@@ -1,0 +1,140 @@
+# Track & Trace ontology tutorial part 2: Enrich the ontology
+
+In this tutorial step, you enrich your ontology by adding metadata to the entity types, their properties and the
+relationship types. You also create business rules. This information adds the domain context that lets an agent
+understand what an aggregation mismatch is, when a shipment counts as delayed, and how many days of stock a
+warehouse has left.
+
+This is the step that makes the difference in the demo (takeaway 2, "why semantic business context matters").
+The tables hold codes such as `MISMATCH`, `BYPASS` and `MISSING_AGGREGATION_DATA`; the metadata and rules tell an
+agent what they mean and how they relate.
+
+## Add metadata
+
+You can add metadata to entity types, to specific properties on the entity types, and to relationship types.
+
+### Add entity type metadata
+
+Metadata for entity types supports descriptions, synonyms, and additional metadata key-value pairs.
+
+1. Select the **Distributor** entity type in the **Explorer**, and then select **Entity type > Open details**.
+1. On its **Configure** page, scroll down to the **Metadata** section and select **Edit**.
+1. Enter the following **Description**: *Filtered warehouse binding where warehouse_type = DISTRIBUTOR.
+   A distributor receives shipments from the factories and supplies retail in its market.*
+1. Select **Update**.
+
+Use the same steps to add the entity type metadata in the following table.
+
+| Entity type name | Metadata |
+|---|---|
+| Hub | Description: *Filtered warehouse binding where warehouse_type = HUB. A hub receives full trucks from the factories and serves all or most of its market.* |
+| Cigarette | Description: *Filtered product binding where category = Cigarettes.* |
+| Heated Tobacco Stick | Description: *Filtered product binding where category = Heated tobacco sticks.* |
+| Pack | Description: *Smallest serialized saleable unit. Each pack carries a unique serial code (UID) that is commissioned on the packaging line.* Synonyms: *UID, serial code, serialized pack, unit pack* |
+| Bundle | Description: *Group of packs aggregated under one bundle UID. A full bundle holds packs_per_bundle packs of its product.* Synonyms: *carton* |
+| Shipping Case | Description: *Group of bundles aggregated under one case UID. A full case holds bundles_per_case bundles of its product.* Synonyms: *case, master case, outer case* |
+| Pallet | Description: *Logistics unit built from shipping cases (cases_per_pallet of the product).* |
+| Shipment | Description: *One truck departure from a factory to a warehouse.* Synonyms: *consignment, load, truck* |
+| Market | Description: *Market of destination. regulation_profile defines which authority submissions are required.* Synonyms: *market of destination, intended market* |
+| Authority Submission | Description: *Notification to a market's tax authority about the dispatch or arrival of a shipment.* Synonyms: *regulatory notification, dispatch notification, arrival notification* |
+| Trace Event | Description: *Track & Trace event. COMMISSION activates a UID; AGGREGATE links child_count children to the parent object_uid; DISAGGREGATE removes them; DISPATCH and ARRIVE move a pallet with a shipment; DECOMMISSION deactivates a UID; SCAN_CONSUMER is a scan in the consumer app.* Synonyms: *serialization event* |
+| Maintenance Event | Description: *Maintenance log entry for a production line. SCANNER_FAULT, OPERATING_MODE_CHANGE (for example bypass mode) and REPAIR entries explain aggregation problems.* |
+| Scanner Telemetry | Description: *5-minute readings of the bundle and case aggregation scanners of each line: codes expected, codes read, read rate, scanner status and station mode.* |
+| Inventory Position | Additional metadata: **Days of cover** : *qty_on_hand divided by the daily demand of the warehouse. Daily demand is the average forecast_qty of the next 7 days for the warehouse's market and product, times demand_share_pct / 100. All quantities are shipping cases.* **Low days of cover** : *Days of cover less than 3* |
+| Line Production Day | Description and synonyms come from the semantic model import. Review the metadata that's already there. |
+
+Additional metadata is entered as key-value pairs.
+
+### Add entity type property metadata
+
+Metadata for properties supports descriptions and additional metadata key-value pairs, but not synonyms. Start
+with **Shipping Case > aggregation_status**.
+
+1. Select the **Shipping Case** entity type, select **...**, and then select **Bind data**.
+1. Select **Properties** under **Entity type** in the left pane.
+1. Next to the **aggregation_status** property, select **Metadata**.
+1. For **Description**, enter *COMPLETE = all expected bundles aggregated. MISMATCH = fewer bundles aggregated
+   than expected and not corrected. REWORKED = corrected by disaggregation and re-aggregation.*
+1. Select **Update**, and then select **Save**.
+
+Use the same steps to add the property metadata in the following table.
+
+| Entity type | Property | Metadata |
+|---|---|---|
+| Shipping Case | bundle_count | Description: *Bundles aggregated into the case. Compare with expected_bundle_count.* |
+| Shipping Case | expected_bundle_count | Description: *Bundles in a full case: bundles_per_case of the product.* |
+| Pack | pack_status | Description: *AGGREGATED (at the factory), DISPATCHED (in transit), ARRIVED (at the destination warehouse), DECOMMISSIONED (removed, for example a quality reject), AGGREGATION_INCOMPLETE (its bundle was never aggregated into a case).* |
+| Bundle | bundle_status | Description: *AGGREGATED = linked to a shipping case. NOT_AGGREGATED = no parent case: an aggregation gap.* |
+| Pallet | pallet_status | Description: *OPEN (being built), READY (closed, waiting for dispatch), DISPATCHED, ARRIVED.* |
+| Shipment | shipment_status | Description: *PLANNED, IN_TRANSIT, DELAYED (estimated arrival more than 4 hours after the planned arrival), DELIVERED.* |
+| Shipment | estimated_arrival | Description: *Latest estimated arrival time. Equals actual_arrival once the shipment is delivered.* |
+| Authority Submission | submission_status | Description: *ACCEPTED, REJECTED or PENDING. A rejection is resolved when a later submission has resubmission_of equal to its submission_id.* |
+| Authority Submission | sla_due_ts | Description: *Deadline for an accepted submission: event_ts plus the authority's submission_sla_hours.* |
+| Market | regulation_profile | Description: *Required submissions. DISPATCH_AND_ARRIVAL and TAX_STAMP_RECONCILIATION: dispatch and arrival. FULL_HIERARCHY_AT_DISPATCH: dispatch, with the complete pack-to-pallet hierarchy. ARRIVAL_ONLY: arrival.* |
+| Inventory Position | qty_on_hand | Description: *Shipping cases on hand at the snapshot time (uom = CASE), not packs.* |
+| Warehouse | demand_share_pct | Description: *Share of the market's demand served by this warehouse, in percent.* |
+| Scanner Telemetry | read_rate_pct | Description: *Percentage of expected codes read in the 5-minute interval.* |
+| Scanner Telemetry | station_mode | Description: *NORMAL, or BYPASS: the line keeps running when codes aren't read, so aggregation can be incomplete.* |
+| Product | sku | Description: *Enterprise product identifier (stock keeping unit).* |
+| Consumer Scan | result | Description: *VALID; UNKNOWN (the UID doesn't exist); DUPLICATE (the UID was scanned far away shortly before).* |
+
+### Add relationship metadata
+
+Metadata for relationship types supports descriptions and additional metadata key-value pairs, but not synonyms.
+Start with **Bundle aggregatedIntoCase Shipping Case**.
+
+1. Select the **Bundle** entity type in the **Explorer** to show it on the configuration canvas, and select the
+   **aggregatedIntoCase** relationship connected to it to open the relationship configuration options.
+1. Scroll down to the **Metadata** section and select **Edit**.
+1. For **Description**, enter *The bundle was aggregated into this shipping case. A bundle without a case wasn't
+   aggregated.*
+1. Select **Update**.
+
+Use the same steps to add the relationship type metadata in the following table.
+
+| Relationship type name | Origin > target entity type | Metadata |
+|---|---|---|
+| aggregatedIntoBundle | Pack > Bundle | Description: *The pack was aggregated into this bundle.* |
+| aggregatedIntoPallet | Shipping Case > Pallet | Description: *The shipping case was aggregated onto this pallet.* |
+| caseProducedUnder | Shipping Case > Production Order | Description: *The production order, and so the line and time, under which the case was packed.* |
+| loadedOn | Pallet > Shipment | Description: *The pallet travels with this shipment.* |
+| deliversTo | Shipment > Warehouse | Description: *Identifies the warehouse receiving the shipment.* |
+| originatesAt | Shipment > Factory | Description: *Identifies the factory sending the shipment.* |
+| carriedBy | Shipment > Partner | Description: *Identifies the carrier of the shipment.* |
+| reportsShipment | Authority Submission > Shipment | Description: *The submission notifies the tax authority about this shipment's dispatch or arrival.* |
+| loggedOn | Maintenance Event > Production Line | Description: *Identifies the line the maintenance entry is about.* |
+| hasScannerReading | Production Line > Scanner Telemetry | Description: *Aggregation scanner readings of the line.* |
+| stockedAt | Inventory Position > Warehouse | Description: *The warehouse holding the stock.* |
+
+## Add rules
+
+Next, add business rules that describe day-to-day operations. Write rules in natural language and link them to
+entity types, properties and relationship types, so consumers like AI agents can discover them and use them to
+ground their responses.
+
+1. On the **Home** tab of the top ribbon, select **+ Add > Rule**.
+1. Enter the following rule details:
+   - **Name**: *Aggregation mismatch*
+   - **Definition**: *A shipping case has an aggregation mismatch when its bundle_count is lower than the
+     bundles_per_case of its product. Authorities that require the full hierarchy reject submissions for
+     shipments that contain such cases.*
+   - **Linked ontology elements**: Shipping Case, Product
+1. Under **Linked ontology elements**, select **+ Add**. In the **Add elements** dialog, select the two entity
+   types and then select **Save**.
+1. Select **Create**.
+1. In the **Explorer**, expand **Rules** and select **Aggregation mismatch** to review the saved rule.
+
+Select **Home > + Add > Rule** to add the following rules.
+
+| Name | Definition | Linked elements |
+|---|---|---|
+| Scanner degradation | An aggregation scanner is degraded when its read rate stays below 98% for more than 15 minutes, or when its station runs in BYPASS mode. | Production Line, Scanner Telemetry |
+| Delayed shipment | A shipment is delayed when it departed more than 4 hours after its planned departure, or when its estimated arrival is more than 4 hours after its planned arrival. | Shipment |
+| Submission SLA breach | An authority submission breaches its SLA when it isn't accepted by sla_due_ts, which is the event time plus the authority's submission_sla_hours. | Authority Submission, Tax Authority |
+| Supply risk | A warehouse has a supply risk for a product when its days of cover is below 3. A warehouse in the same market with more than 7 days of cover can transfer the stock above 7 days of cover. | Inventory Position, Demand Forecast, Warehouse |
+| Suspicious consumer scan | A pack is suspicious when it's scanned in two different countries within 24 hours, or when a scanned UID doesn't exist. | Consumer Scan, Pack |
+
+## Next steps
+
+Your ontology is now enriched with metadata and business rules that give more context about day-to-day
+operations. Next, continue to [Explore the ontology](tutorial-3-explore-ontology.md).

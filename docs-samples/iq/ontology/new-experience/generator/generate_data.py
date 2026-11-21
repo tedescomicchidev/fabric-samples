@@ -14,7 +14,8 @@ What it produces (relative to --out, default: the parent folder of this script):
     notebooks/                 notebook that creates the KPI semantic model in your workspace
     work-context/              emails, Teams messages and SOPs for the Work IQ side of the demo
     README_data.md             row counts and where each seeded scenario lives
-    TUTORIAL_GUIDE.md          how to run the Fabric IQ ontology tutorial with this data
+    tutorial/                  the Track & Trace ontology tutorial and demo script, rendered from
+                               tutorial_templates/ with the IDs and numbers of the generated data
 
 Usage:
     python generate_data.py
@@ -41,6 +42,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import docs_templates  # noqa: E402
+import tutorial_docs  # noqa: E402
 import work_context  # noqa: E402
 
 UTC = timezone.utc
@@ -1130,7 +1132,10 @@ def main():
                                   COLUMNS["production_line_daily"])
     docs_templates.write_readme_data(g, os.path.join(out, "README_data.md"), counts,
                                      {"pack": pack_parts, "trace_event": trace_parts})
-    docs_templates.write_tutorial_guide(g, os.path.join(out, "TUTORIAL_GUIDE.md"))
+    stale_guide = os.path.join(out, "TUTORIAL_GUIDE.md")  # replaced by tutorial/
+    if os.path.exists(stale_guide):
+        os.remove(stale_guide)
+    tutorial_docs.write_tutorial(g, out, FACTORIES, PARTNERS)
     docs_templates.write_folder_readme(g, os.path.join(out, "README.md"))
     print(json.dumps({"as_of": ts(as_of), "seed": args.seed, "rows": counts,
                       "pack_parts": len(pack_parts), "trace_event_parts": len(trace_parts)}, indent=1))

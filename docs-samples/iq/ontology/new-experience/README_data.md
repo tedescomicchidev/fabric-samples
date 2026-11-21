@@ -99,7 +99,7 @@ numbers from the use case.
 
 ```bash
 cd generator
-python generate_data.py                 # rewrites the data folders, README_data.md and TUTORIAL_GUIDE.md
+python generate_data.py                 # rewrites the data folders, README_data.md and tutorial/
 python validate_data.py                 # checks S1-S6 and the data-quality rules
 python generate_data.py --as-of 2026-12-02T07:00:00Z   # same storyline one week later
 ```

@@ -8,6 +8,9 @@ shipments and supply-chain risk.
 
 All data is fictional. No real company, factory, market, customer or tax-authority data is used.
 
+**Start here: [the Track & Trace ontology tutorial](tutorial/README.md).** It follows the Learn tutorial with this
+data, adds the demo agents, and ends with the demo script and what each scene demonstrates.
+
 | Folder or file | Use in the tutorial |
 |---|---|
 | `lakehouse/` | Upload to the lakehouse **TrackTraceLH** and load each file (and the `pack` folder) to a table |
@@ -15,9 +18,9 @@ All data is fictional. No real company, factory, market, customer or tax-authori
 | `notebooks/create_semantic_model.ipynb` | Run in Fabric to create the semantic model **TrackTraceKPIs** (replaces `SalesReport.pbix`) |
 | `semantic-model/` | Source data of that semantic model, for reference. Don't upload it. |
 | `work-context/` | Emails, Teams messages and SOPs for the Work IQ part of the demo |
-| [`TUTORIAL_GUIDE.md`](TUTORIAL_GUIDE.md) | Step-by-step mapping of the tutorial to this data set |
+| [`tutorial/`](tutorial/README.md) | **The tutorial**: parts 0 to 4 follow the Learn ontology tutorial with this data, part 5 builds the demo agents, part 6 is the demo script with what each scene demonstrates |
 | [`README_data.md`](README_data.md) | Row counts, seeded scenarios S1-S6 and design choices |
-| `generator/` | `generate_data.py` (fixed seed) and `validate_data.py` |
+| `generator/` | `generate_data.py` (fixed seed), `validate_data.py`, and the tutorial templates |
 
 Data snapshot: **2026-11-25 07:00 UTC**. To move the storyline to another week, run
 `python generator/generate_data.py --as-of <a Wednesday>T07:00:00Z`.
