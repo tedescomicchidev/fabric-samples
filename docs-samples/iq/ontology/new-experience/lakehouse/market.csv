@@ -1,0 +1,5 @@
+market_id,name,country_code,regulation_profile,requires_stamp
+MKT-ALPHA,Market Alpha,XA,DISPATCH_AND_ARRIVAL,false
+MKT-BETA,Market Beta,XB,TAX_STAMP_RECONCILIATION,true
+MKT-GAMMA,Market Gamma,XC,FULL_HIERARCHY_AT_DISPATCH,true
+MKT-DELTA,Market Delta,XD,ARRIVAL_ONLY,false

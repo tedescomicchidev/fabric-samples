@@ -1,0 +1,7 @@
+warehouse_id,name,market_id,warehouse_type,demand_share_pct,operator_partner_id
+WH-ALP-H1,Alpha Central Hub,MKT-ALPHA,HUB,65,
+WH-ALP-D1,Alpha East Distributor,MKT-ALPHA,DISTRIBUTOR,35,
+WH-BET-D1,Beta North Distributor,MKT-BETA,DISTRIBUTOR,60,PRT-04
+WH-BET-D2,Beta South Distributor,MKT-BETA,DISTRIBUTOR,40,PRT-04
+WH-GAM-H1,Gamma National Hub,MKT-GAMMA,HUB,100,
+WH-DEL-H1,Delta Import Hub,MKT-DELTA,HUB,100,

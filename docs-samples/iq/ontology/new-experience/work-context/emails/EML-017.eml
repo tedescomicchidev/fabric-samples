@@ -1,0 +1,23 @@
+Message-ID: <eml-017@ttdemo.example>
+Date: Tue, 24 Nov 2026 14:55:00 +0000
+From: Beta Operations - Meridian 3PL Services
+ <beta.ops.meridian@example-logistics.test>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Beta warehouses - stock note and transfer slots this week
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hi Marta,
+
+Short operational note for the two Beta warehouses we run for you:
+
+- Beta North Distributor (WH-BET-D1): Orion Red (SKU-03) is getting thin this week. The next inbound
+  is the Northgate truck from PL-01.
+- Beta South Distributor (WH-BET-D2): comfortable on Orion Red.
+- We have a free shuttle slot between South and North on Wednesday afternoon and Thursday morning if you
+  need a stock transfer (up to 6 pallets, same-day delivery).
+
+Best regards,
+Beta Operations, Meridian 3PL Services

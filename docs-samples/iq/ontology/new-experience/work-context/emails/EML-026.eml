@@ -1,0 +1,24 @@
+Message-ID: <eml-026@ttdemo.example>
+Date: Wed, 25 Nov 2026 06:52:00 +0000
+From: Northgate Haulage - Dispatch <ops.northgate@example-logistics.test>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Delay notice - SHP-20261123-PL01-BETD1 - revised ETA
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Dear Marta,
+
+Update on shipment SHP-20261123-PL01-BETD1 (Factory PL-01 to Beta North Distributor, 12 pallets):
+
+- Planned departure: 23 Nov 2026 14:00 UTC
+- Actual departure:  24 Nov 2026 16:00 UTC (26 hours late - tractor unit breakdown, replacement truck)
+- Planned arrival:   24 Nov 2026 08:00 UTC
+- Revised ETA:       25 Nov 2026 14:00 UTC (includes about 4 hours queue at the border crossing)
+
+We apologise for the delay and will confirm when the truck is unloaded.
+
+Kind regards,
+Dispatch team
+Northgate Haulage

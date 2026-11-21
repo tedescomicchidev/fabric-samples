@@ -1,0 +1,16 @@
+Message-ID: <eml-002@ttdemo.example>
+Date: Mon, 23 Nov 2026 10:07:00 +0000
+From: Canteen Krakow Office <canteen@ttdemo.example>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: This week's lunch menu
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+
+Monday: vegetable soup. Tuesday: pierogi. Wednesday: pasta bar. Thursday: chef's special. Friday: fish.
+
+Best regards,
+Canteen Krakow Office

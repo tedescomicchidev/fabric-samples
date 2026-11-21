@@ -1,0 +1,22 @@
+Message-ID: <eml-010@ttdemo.example>
+Date: Tue, 24 Nov 2026 06:47:00 +0000
+From: Tomasz W. (Shift Lead, Factory PL-02) <tomasz.w@ttdemo.example>
+To: pl02-production@ttdemo.example, t-and-t-ops@ttdemo.example
+Subject: PL-02 Line 3 - case aggregation scanner in bypass mode
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hi all,
+
+FYI for shift A on 24 Nov: the case aggregation scanner (camera 2) on PL-02 Line 3 has intermittent
+no-reads since about 06:20 UTC. To avoid stopping the line we switched the station to bypass mode at
+06:38 UTC (no stop on missing bundle reads). A maintenance ticket is logged and a technician is booked
+for the afternoon.
+
+Running order PO-20261124-PL02L3 (SKU-02 for Market Gamma).
+
+Regards,
+Tomasz W.
+Shift Lead, Factory PL-02

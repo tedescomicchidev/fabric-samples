@@ -1,0 +1,16 @@
+Message-ID: <eml-014@ttdemo.example>
+Date: Tue, 24 Nov 2026 12:07:00 +0000
+From: Security Awareness <security@ttdemo.example>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Phishing simulation results for your department
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+
+Thank you for taking part in last month's phishing simulation. Your department scored above average.
+
+Best regards,
+Security Awareness

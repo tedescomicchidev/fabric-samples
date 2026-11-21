@@ -1,0 +1,19 @@
+Message-ID: <eml-021@ttdemo.example>
+Date: Tue, 24 Nov 2026 22:32:00 +0000
+From: Gamma Customs and Excise Agency <no-reply@excise-gamma.example.test>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Submission SUB-000167 rejected - MISSING_AGGREGATION_DATA
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+This is an automated message.
+
+Your dispatch notification SUB-000167 for shipment SHP-20261124-PL02-GAMH1-E was REJECTED.
+
+Reason code: MISSING_AGGREGATION_DATA
+Detail: Missing aggregation data: 76 of 100 declared shipping cases contain fewer bundles than the declared product hierarchy (expected 5 bundles per case).
+
+Submit a corrected notification within the service level of 4 hours of the dispatch event.
+Do not reply to this message.

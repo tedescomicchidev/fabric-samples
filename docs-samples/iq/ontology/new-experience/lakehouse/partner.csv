@@ -1,0 +1,6 @@
+partner_id,name,partner_type,contact_email
+PRT-01,Vistaline Freight,CARRIER,ops.vistaline@example-logistics.test
+PRT-02,Northgate Haulage,CARRIER,ops.northgate@example-logistics.test
+PRT-03,Blueway Transport,CARRIER,dispatch.blueway@example-logistics.test
+PRT-04,Meridian 3PL Services,THIRD_PARTY_LOGISTICS,beta.ops.meridian@example-logistics.test
+PRT-05,Clearpath Customs Brokers,CUSTOMS_BROKER,desk.clearpath@example-logistics.test

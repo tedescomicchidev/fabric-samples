@@ -1,0 +1,16 @@
+Message-ID: <eml-001@ttdemo.example>
+Date: Sun, 22 Nov 2026 19:07:00 +0000
+From: IT Service Desk <servicedesk@ttdemo.example>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Planned maintenance: VPN gateway, Saturday 22:00-02:00
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+
+The VPN gateway is updated on Saturday night. Expect short interruptions. No action needed.
+
+Best regards,
+IT Service Desk

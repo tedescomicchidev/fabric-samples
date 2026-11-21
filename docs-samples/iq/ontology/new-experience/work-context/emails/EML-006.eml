@@ -1,0 +1,16 @@
+Message-ID: <eml-006@ttdemo.example>
+Date: Mon, 23 Nov 2026 21:07:00 +0000
+From: Facility Management <facilities@ttdemo.example>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Fire drill on Thursday at 10:30
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+
+A fire drill takes place on Thursday at 10:30. Please follow the wardens' instructions.
+
+Best regards,
+Facility Management

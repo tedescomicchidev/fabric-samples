@@ -1,0 +1,16 @@
+Message-ID: <eml-005@ttdemo.example>
+Date: Mon, 23 Nov 2026 19:07:00 +0000
+From: Travel Desk <travel@ttdemo.example>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Booking confirmation - Krakow hotel
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+
+Your hotel booking for the regional workshop is confirmed. Check-in from 15:00.
+
+Best regards,
+Travel Desk

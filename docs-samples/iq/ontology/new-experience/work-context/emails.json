@@ -1,0 +1,262 @@
+[
+  {
+    "email_id": "EML-001",
+    "sent": "2026-11-22T19:07:00Z",
+    "from": "IT Service Desk <servicedesk@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Planned maintenance: VPN gateway, Saturday 22:00-02:00",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nThe VPN gateway is updated on Saturday night. Expect short interruptions. No action needed.\n\nBest regards,\nIT Service Desk\n"
+  },
+  {
+    "email_id": "EML-002",
+    "sent": "2026-11-23T10:07:00Z",
+    "from": "Canteen Krakow Office <canteen@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "This week's lunch menu",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nMonday: vegetable soup. Tuesday: pierogi. Wednesday: pasta bar. Thursday: chef's special. Friday: fish.\n\nBest regards,\nCanteen Krakow Office\n"
+  },
+  {
+    "email_id": "EML-003",
+    "sent": "2026-11-23T15:07:00Z",
+    "from": "HR Learning <learning@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Reminder: complete your annual data-privacy training",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nYour annual data-privacy e-learning is due by the end of the month. It takes about 25 minutes.\n\nBest regards,\nHR Learning\n"
+  },
+  {
+    "email_id": "EML-004",
+    "sent": "2026-11-23T17:07:00Z",
+    "from": "Supply Chain Digest <newsletter@scdigest.example.test>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Supply Chain Digest - weekly edition",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nThis week: warehouse automation trends, port congestion index, and five tips for S&OP meetings.\n\nBest regards,\nSupply Chain Digest\n"
+  },
+  {
+    "email_id": "EML-005",
+    "sent": "2026-11-23T19:07:00Z",
+    "from": "Travel Desk <travel@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Booking confirmation - Krakow hotel",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nYour hotel booking for the regional workshop is confirmed. Check-in from 15:00.\n\nBest regards,\nTravel Desk\n"
+  },
+  {
+    "email_id": "EML-006",
+    "sent": "2026-11-23T21:07:00Z",
+    "from": "Facility Management <facilities@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Fire drill on Thursday at 10:30",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nA fire drill takes place on Thursday at 10:30. Please follow the wardens' instructions.\n\nBest regards,\nFacility Management\n"
+  },
+  {
+    "email_id": "EML-007",
+    "sent": "2026-11-24T01:07:00Z",
+    "from": "Finance Shared Services <expenses@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Expense report reminder",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nYou have two open expense items older than 30 days. Please submit them in the expense tool.\n\nBest regards,\nFinance Shared Services\n"
+  },
+  {
+    "email_id": "EML-008",
+    "sent": "2026-11-24T03:07:00Z",
+    "from": "Ana P. <ana.p@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Team lunch on Friday?",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nShall we do lunch on Friday to celebrate the quarter? Reply by Wednesday.\n\nBest regards,\nAna P.\n"
+  },
+  {
+    "email_id": "EML-009",
+    "sent": "2026-11-24T05:07:00Z",
+    "from": "PL-01 Maintenance <pl01-maintenance@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "PL-01 Line 1 - weekly preventive maintenance done",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nWeekly preventive maintenance on PL-01 Line 1 completed as planned. No findings.\n\nBest regards,\nPL-01 Maintenance\n"
+  },
+  {
+    "email_id": "EML-010",
+    "sent": "2026-11-24T06:47:00Z",
+    "from": "Tomasz W. (Shift Lead, Factory PL-02) <tomasz.w@ttdemo.example>",
+    "to": "pl02-production@ttdemo.example, t-and-t-ops@ttdemo.example",
+    "subject": "PL-02 Line 3 - case aggregation scanner in bypass mode",
+    "relevant": true,
+    "scenario": "S1",
+    "body": "Hi all,\n\nFYI for shift A on 24 Nov: the case aggregation scanner (camera 2) on PL-02 Line 3 has intermittent\nno-reads since about 06:20 UTC. To avoid stopping the line we switched the station to bypass mode at\n06:38 UTC (no stop on missing bundle reads). A maintenance ticket is logged and a technician is booked\nfor the afternoon.\n\nRunning order PO-20261124-PL02L3 (SKU-02 for Market Gamma).\n\nRegards,\nTomasz W.\nShift Lead, Factory PL-02\n"
+  },
+  {
+    "email_id": "EML-011",
+    "sent": "2026-11-24T07:07:00Z",
+    "from": "Vistaline Freight - Accounts <accounts.vistaline@example-logistics.test>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Invoice VF-88213 for October",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nPlease find our invoice for October line-haul services in the supplier portal. Payment terms 45 days.\n\nBest regards,\nVistaline Freight - Accounts\n"
+  },
+  {
+    "email_id": "EML-012",
+    "sent": "2026-11-24T09:07:00Z",
+    "from": "Software Licensing <licensing@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "License renewal: diagram tool",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nYour diagram tool license renews automatically next month. No action needed.\n\nBest regards,\nSoftware Licensing\n"
+  },
+  {
+    "email_id": "EML-013",
+    "sent": "2026-11-24T11:07:00Z",
+    "from": "Internal Comms <news@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Town hall recording now available",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nThe recording of last week's town hall is available on the intranet.\n\nBest regards,\nInternal Comms\n"
+  },
+  {
+    "email_id": "EML-014",
+    "sent": "2026-11-24T12:07:00Z",
+    "from": "Security Awareness <security@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Phishing simulation results for your department",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nThank you for taking part in last month's phishing simulation. Your department scored above average.\n\nBest regards,\nSecurity Awareness\n"
+  },
+  {
+    "email_id": "EML-015",
+    "sent": "2026-11-24T13:07:00Z",
+    "from": "Parking Office <parking@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Car park level -2 closed on Saturday",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nLevel -2 of the car park is closed on Saturday for line painting.\n\nBest regards,\nParking Office\n"
+  },
+  {
+    "email_id": "EML-016",
+    "sent": "2026-11-24T14:04:00Z",
+    "from": "Gamma Customs and Excise Agency <no-reply@excise-gamma.example.test>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Submission SUB-000163 rejected - MISSING_AGGREGATION_DATA",
+    "relevant": true,
+    "scenario": "S3",
+    "body": "This is an automated message.\n\nYour dispatch notification SUB-000163 for shipment SHP-20261124-PL02-GAMH1 was REJECTED.\n\nReason code: MISSING_AGGREGATION_DATA\nDetail: Missing aggregation data: 44 of 100 declared shipping cases contain fewer bundles than the declared product hierarchy (expected 5 bundles per case).\n\nSubmit a corrected notification within the service level of 4 hours of the dispatch event.\nDo not reply to this message.\n"
+  },
+  {
+    "email_id": "EML-017",
+    "sent": "2026-11-24T14:55:00Z",
+    "from": "Beta Operations - Meridian 3PL Services <beta.ops.meridian@example-logistics.test>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Beta warehouses - stock note and transfer slots this week",
+    "relevant": true,
+    "scenario": "S5",
+    "body": "Hi Marta,\n\nShort operational note for the two Beta warehouses we run for you:\n\n- Beta North Distributor (WH-BET-D1): Orion Red (SKU-03) is getting thin this week. The next inbound\n  is the Northgate truck from PL-01.\n- Beta South Distributor (WH-BET-D2): comfortable on Orion Red.\n- We have a free shuttle slot between South and North on Wednesday afternoon and Thursday morning if you\n  need a stock transfer (up to 6 pallets, same-day delivery).\n\nBest regards,\nBeta Operations, Meridian 3PL Services\n"
+  },
+  {
+    "email_id": "EML-018",
+    "sent": "2026-11-24T16:20:00Z",
+    "from": "Beta Revenue and Stamp Office - Trace Requests <trace-requests@revenue-beta.example.test>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Request for trace information - pack PK-PL-01-6U4NNZG5",
+    "relevant": true,
+    "scenario": "S4",
+    "body": "Dear Sir or Madam,\n\nDuring a routine retail inspection in Market Beta on 24 Nov, our inspectors recorded the pack with\nunique identifier PK-PL-01-6U4NNZG5 (Horizon Blue KS 20).\n\nIn accordance with the reporting obligations for Market Beta, please provide the full trace of this\npack: production site and line, date and time of commissioning, the aggregation hierarchy (bundle,\nshipping case, pallet), the shipment with its dispatch and arrival times, and the receiving distributor.\n\nPlease respond within two business days, quoting reference BRS-TR-2026-0417.\n\nYours faithfully,\nTrace Requests Desk\nBeta Revenue and Stamp Office\n"
+  },
+  {
+    "email_id": "EML-019",
+    "sent": "2026-11-24T19:07:00Z",
+    "from": "Data Platform Team <dataplatform@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Monthly data platform newsletter",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nNew dashboards for warehouse throughput are live. Office hours every Thursday.\n\nBest regards,\nData Platform Team\n"
+  },
+  {
+    "email_id": "EML-020",
+    "sent": "2026-11-24T21:07:00Z",
+    "from": "Survey Team <survey@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Quarterly engagement survey closes Friday",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nThe quarterly engagement survey closes on Friday. It takes 10 minutes.\n\nBest regards,\nSurvey Team\n"
+  },
+  {
+    "email_id": "EML-021",
+    "sent": "2026-11-24T22:32:00Z",
+    "from": "Gamma Customs and Excise Agency <no-reply@excise-gamma.example.test>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Submission SUB-000167 rejected - MISSING_AGGREGATION_DATA",
+    "relevant": true,
+    "scenario": "S3",
+    "body": "This is an automated message.\n\nYour dispatch notification SUB-000167 for shipment SHP-20261124-PL02-GAMH1-E was REJECTED.\n\nReason code: MISSING_AGGREGATION_DATA\nDetail: Missing aggregation data: 76 of 100 declared shipping cases contain fewer bundles than the declared product hierarchy (expected 5 bundles per case).\n\nSubmit a corrected notification within the service level of 4 hours of the dispatch event.\nDo not reply to this message.\n"
+  },
+  {
+    "email_id": "EML-022",
+    "sent": "2026-11-25T01:07:00Z",
+    "from": "Office Services <office@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "New printer on floor 3",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nA new multifunction printer is installed on floor 3 next to the kitchen.\n\nBest regards,\nOffice Services\n"
+  },
+  {
+    "email_id": "EML-023",
+    "sent": "2026-11-25T03:07:00Z",
+    "from": "Clearpath Customs Brokers <desk.clearpath@example-logistics.test>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Holiday opening hours",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nOur customs desk has reduced opening hours on public holidays in December. Plan your clearances early.\n\nBest regards,\nClearpath Customs Brokers\n"
+  },
+  {
+    "email_id": "EML-024",
+    "sent": "2026-11-25T05:07:00Z",
+    "from": "Lukas H. <lukas.h@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Slides for next week's process review",
+    "relevant": false,
+    "scenario": "",
+    "body": "Hello,\n\nHere is the link to the draft slides for next week's process review. No rush - comments by Monday.\n\nBest regards,\nLukas H.\n"
+  },
+  {
+    "email_id": "EML-025",
+    "sent": "2026-11-25T06:34:00Z",
+    "from": "Elena V. (Compliance, Track & Trace) <elena.v@ttdemo.example>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Gamma rejections from yesterday - please check aggregation",
+    "relevant": true,
+    "scenario": "S3",
+    "body": "Morning Marta,\n\nGamma rejected two of our dispatch notifications yesterday, SUB-000163 and SUB-000167, both with\nMISSING_AGGREGATION_DATA. Both shipments left PL-02. Their SLA is only 4 hours, so we are already in\nbreach on both.\n\nCan you check what happened with the aggregation on the PL-02 side and confirm when we can send corrected\nfiles? I need to inform the Gamma account team before noon.\n\nThanks,\nElena\n"
+  },
+  {
+    "email_id": "EML-026",
+    "sent": "2026-11-25T06:52:00Z",
+    "from": "Northgate Haulage - Dispatch <ops.northgate@example-logistics.test>",
+    "to": "marta.k@ttdemo.example",
+    "subject": "Delay notice - SHP-20261123-PL01-BETD1 - revised ETA",
+    "relevant": true,
+    "scenario": "S2",
+    "body": "Dear Marta,\n\nUpdate on shipment SHP-20261123-PL01-BETD1 (Factory PL-01 to Beta North Distributor, 12 pallets):\n\n- Planned departure: 23 Nov 2026 14:00 UTC\n- Actual departure:  24 Nov 2026 16:00 UTC (26 hours late - tractor unit breakdown, replacement truck)\n- Planned arrival:   24 Nov 2026 08:00 UTC\n- Revised ETA:       25 Nov 2026 14:00 UTC (includes about 4 hours queue at the border crossing)\n\nWe apologise for the delay and will confirm when the truck is unloaded.\n\nKind regards,\nDispatch team\nNorthgate Haulage\n"
+  }
+]

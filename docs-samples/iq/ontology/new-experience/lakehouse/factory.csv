@@ -1,0 +1,4 @@
+factory_id,name,country_code,timezone
+PL-01,Oakridge Plant,PL,Europe/Warsaw
+PL-02,Riverbend Plant,PL,Europe/Warsaw
+CZ-01,Silverbrook Plant,CZ,Europe/Prague

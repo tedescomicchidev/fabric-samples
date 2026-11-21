@@ -1,0 +1,16 @@
+Message-ID: <eml-011@ttdemo.example>
+Date: Tue, 24 Nov 2026 07:07:00 +0000
+From: Vistaline Freight - Accounts <accounts.vistaline@example-logistics.test>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Invoice VF-88213 for October
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+
+Please find our invoice for October line-haul services in the supplier portal. Payment terms 45 days.
+
+Best regards,
+Vistaline Freight - Accounts

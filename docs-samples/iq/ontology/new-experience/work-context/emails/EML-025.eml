@@ -1,0 +1,21 @@
+Message-ID: <eml-025@ttdemo.example>
+Date: Wed, 25 Nov 2026 06:34:00 +0000
+From: Elena V. (Compliance, Track & Trace) <elena.v@ttdemo.example>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Gamma rejections from yesterday - please check aggregation
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Morning Marta,
+
+Gamma rejected two of our dispatch notifications yesterday, SUB-000163 and SUB-000167, both with
+MISSING_AGGREGATION_DATA. Both shipments left PL-02. Their SLA is only 4 hours, so we are already in
+breach on both.
+
+Can you check what happened with the aggregation on the PL-02 side and confirm when we can send corrected
+files? I need to inform the Gamma account team before noon.
+
+Thanks,
+Elena

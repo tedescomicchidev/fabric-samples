@@ -1,0 +1,58 @@
+log_id,line_id,ts,maintenance_type,component,description,technician,downtime_minutes
+MNT-00001,PL-01-L1,2026-10-29T10:49:00Z,CORRECTIVE,Bundle wrapper,Film tension alarm; film roll re-threaded.,T. Wrona,6
+MNT-00002,CZ-01-L4,2026-10-31T11:20:00Z,CORRECTIVE,Case erector,Case erector jam cleared.,P. Lis,6
+MNT-00003,PL-01-L2,2026-11-01T08:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",P. Lis,120
+MNT-00004,PL-01-L4,2026-11-01T08:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",K. Novotna,120
+MNT-00005,PL-02-L2,2026-11-01T08:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00006,PL-02-L3,2026-11-01T08:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00007,CZ-01-L3,2026-11-01T10:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",K. Novotna,120
+MNT-00008,CZ-01-L4,2026-11-01T10:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",J. Kowal,120
+MNT-00009,PL-01-L1,2026-11-01T12:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00010,PL-01-L3,2026-11-01T12:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00011,PL-01-L2,2026-11-03T06:25:00Z,CORRECTIVE,Bundle aggregation scanner,"Short no-read burst; scanner window wiped, read rate normal.",T. Wrona,13
+MNT-00012,PL-01-L1,2026-11-03T09:18:00Z,CORRECTIVE,Glue unit,Glue nozzle blocked on carton wrapper; nozzle cleaned.,M. Dvorak,13
+MNT-00013,CZ-01-L4,2026-11-05T05:59:00Z,CORRECTIVE,Bundle aggregation scanner,"Short no-read burst; scanner window wiped, read rate normal.",P. Lis,10
+MNT-00014,PL-01-L1,2026-11-05T07:13:00Z,CORRECTIVE,Bundle aggregation scanner,"Short no-read burst; scanner window wiped, read rate normal.",J. Kowal,18
+MNT-00015,PL-01-L4,2026-11-05T09:13:00Z,CORRECTIVE,Glue unit,Glue nozzle blocked on carton wrapper; nozzle cleaned.,K. Novotna,22
+MNT-00016,PL-01-L1,2026-11-06T06:03:00Z,CORRECTIVE,Bundle aggregation scanner,"Short no-read burst; scanner window wiped, read rate normal.",M. Dvorak,15
+MNT-00017,PL-02-L3,2026-11-06T06:25:00Z,CORRECTIVE,Bundle wrapper,Film tension alarm; film roll re-threaded.,J. Kowal,10
+MNT-00018,PL-02-L1,2026-11-08T07:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",J. Kowal,120
+MNT-00019,PL-01-L3,2026-11-08T08:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00020,CZ-01-L3,2026-11-08T09:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00021,PL-02-L2,2026-11-08T09:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00022,CZ-01-L4,2026-11-08T10:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",J. Kowal,120
+MNT-00023,PL-01-L2,2026-11-08T11:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",M. Dvorak,120
+MNT-00024,PL-02-L3,2026-11-08T11:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00025,PL-01-L1,2026-11-08T12:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00026,CZ-01-L1,2026-11-11T11:22:00Z,CORRECTIVE,Pack printer,Code print contrast low; ribbon replaced.,A. Nowicki,6
+MNT-00027,PL-01-L1,2026-11-12T06:57:00Z,CORRECTIVE,Bundle wrapper,Film tension alarm; film roll re-threaded.,K. Novotna,16
+MNT-00028,PL-02-L1,2026-11-12T07:30:00Z,CORRECTIVE,Bundle aggregation scanner,"Short no-read burst; scanner window wiped, read rate normal.",J. Kowal,6
+MNT-00029,PL-01-L2,2026-11-13T06:43:00Z,CORRECTIVE,Bundle wrapper,Film tension alarm; film roll re-threaded.,K. Novotna,17
+MNT-00030,CZ-01-L2,2026-11-14T08:28:00Z,CORRECTIVE,Bundle aggregation scanner,"Short no-read burst; scanner window wiped, read rate normal.",A. Nowicki,5
+MNT-00031,CZ-01-L2,2026-11-15T07:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",J. Kowal,120
+MNT-00032,CZ-01-L3,2026-11-15T07:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",P. Lis,120
+MNT-00033,PL-02-L3,2026-11-15T07:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",K. Novotna,120
+MNT-00034,PL-01-L3,2026-11-15T08:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",K. Novotna,120
+MNT-00035,PL-02-L2,2026-11-15T08:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",P. Lis,120
+MNT-00036,PL-02-L4,2026-11-15T08:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00037,CZ-01-L1,2026-11-15T09:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00038,CZ-01-L4,2026-11-15T10:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",J. Kowal,120
+MNT-00039,PL-01-L4,2026-11-15T10:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",P. Lis,120
+MNT-00040,PL-01-L2,2026-11-15T11:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00041,CZ-01-L2,2026-11-17T06:41:00Z,CORRECTIVE,Pack printer,Code print contrast low; ribbon replaced.,A. Nowicki,16
+MNT-00042,PL-02-L4,2026-11-17T08:49:00Z,CORRECTIVE,Pack printer,Code print contrast low; ribbon replaced.,A. Nowicki,23
+MNT-00043,CZ-01-L3,2026-11-17T09:16:00Z,CORRECTIVE,Bundle wrapper,Film tension alarm; film roll re-threaded.,P. Lis,23
+MNT-00044,CZ-01-L4,2026-11-18T11:37:00Z,CORRECTIVE,Bundle wrapper,Film tension alarm; film roll re-threaded.,A. Nowicki,12
+MNT-00045,CZ-01-L4,2026-11-19T05:00:00Z,PLANNED_OVERHAUL,Line (overhaul),Planned overhaul of the heated-stick line. Line out of production until 2026-11-28.,Contractor team,0
+MNT-00046,PL-01-L1,2026-11-22T07:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00047,CZ-01-L2,2026-11-22T09:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",M. Dvorak,120
+MNT-00048,PL-01-L2,2026-11-22T09:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00049,PL-02-L2,2026-11-22T09:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00050,PL-02-L4,2026-11-22T09:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",P. Lis,120
+MNT-00051,CZ-01-L3,2026-11-22T10:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00052,PL-01-L3,2026-11-22T10:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",T. Wrona,120
+MNT-00053,PL-02-L1,2026-11-22T11:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",A. Nowicki,120
+MNT-00054,CZ-01-L4,2026-11-22T12:00:00Z,PREVENTIVE,Line (weekly),"Weekly preventive maintenance: cleaning, lubrication, camera and printer calibration check.",P. Lis,120
+MNT-00055,PL-02-L3,2026-11-24T06:20:00Z,SCANNER_FAULT,Case aggregation scanner (camera 2),Operator reports intermittent no-reads at the case aggregation station; lens contamination or misalignment suspected. Technician requested.,Shift operator,0
+MNT-00056,PL-02-L3,2026-11-24T06:38:00Z,OPERATING_MODE_CHANGE,Case aggregation scanner (camera 2),Case aggregation station switched to bypass mode (no line stop on missing bundle reads) to keep the line running until the technician arrives.,Shift lead,0
+MNT-00057,PL-02-L3,2026-11-24T18:40:00Z,REPAIR,Case aggregation scanner (camera 2),"Camera 2 lens cleaned and realigned, read rate back to 99.9%. Bypass mode disabled. Cases aggregated in bypass mode were not re-checked.",A. Nowicki,0

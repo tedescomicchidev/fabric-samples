@@ -1,0 +1,16 @@
+Message-ID: <eml-015@ttdemo.example>
+Date: Tue, 24 Nov 2026 13:07:00 +0000
+From: Parking Office <parking@ttdemo.example>
+To: Marta K. <marta.k@ttdemo.example>
+Subject: Car park level -2 closed on Saturday
+X-Demo-Synthetic: true
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+
+Level -2 of the car park is closed on Saturday for line painting.
+
+Best regards,
+Parking Office

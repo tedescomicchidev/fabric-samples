@@ -1,0 +1,152 @@
+[
+  {
+    "message_id": "TMS-001",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Kasia L.",
+    "sent": "2026-11-23T20:55:00Z",
+    "text": "Handover shift B to night: all four lines ran to plan. L4 film roll changed at 18:10.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-002",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Marek S.",
+    "sent": "2026-11-23T21:05:00Z",
+    "text": "Thanks. No production tonight, only cleaning on L2.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-003",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Tomasz W.",
+    "sent": "2026-11-24T05:02:00Z",
+    "text": "Shift A started. L1, L2, L3, L4 running. L3 on Nova Gold for Gamma today.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-004",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Kasia L.",
+    "sent": "2026-11-24T05:40:00Z",
+    "text": "Reminder: the Gamma trucks leave 13:30 and 21:30 UTC as usual.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-005",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Tomasz W.",
+    "sent": "2026-11-24T06:24:00Z",
+    "text": "L3 case scanner throwing no-reads again. Logged it with maintenance.",
+    "relevant": true,
+    "scenario": "S1"
+  },
+  {
+    "message_id": "TMS-006",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Piotr N.",
+    "sent": "2026-11-24T09:15:00Z",
+    "text": "L1 glue level topped up, no stop.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-007",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Tomasz W.",
+    "sent": "2026-11-24T13:05:00Z",
+    "text": "Handover shift A to B: L3 case scanner still flaky, the station is in bypass so the line keeps running. Maintenance says they come after 18:00. Please keep an eye on it.",
+    "relevant": true,
+    "scenario": "S1"
+  },
+  {
+    "message_id": "TMS-008",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Anna B.",
+    "sent": "2026-11-24T13:20:00Z",
+    "text": "Got it, taking over. Gamma truck loading now.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-009",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Anna B.",
+    "sent": "2026-11-24T16:02:00Z",
+    "text": "L2 short stop (7 min) for a case erector jam, cleared.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-010",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Anna B.",
+    "sent": "2026-11-24T18:47:00Z",
+    "text": "Technician fixed the L3 camera, read rate back to normal, bypass off.",
+    "relevant": true,
+    "scenario": "S1"
+  },
+  {
+    "message_id": "TMS-011",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Anna B.",
+    "sent": "2026-11-24T21:03:00Z",
+    "text": "Handover shift B to night: all lines stopped to plan. Second Gamma truck at 21:30.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-012",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Marek S.",
+    "sent": "2026-11-24T21:55:00Z",
+    "text": "Second Gamma truck left. Night cleaning on L4.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-013",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Tomasz W.",
+    "sent": "2026-11-25T05:01:00Z",
+    "text": "Shift A started. All four lines running.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-014",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Kasia L.",
+    "sent": "2026-11-25T05:30:00Z",
+    "text": "Coffee machine in the line office is fixed, finally.",
+    "relevant": false,
+    "scenario": ""
+  },
+  {
+    "message_id": "TMS-015",
+    "team": "Factory PL-02",
+    "channel": "Shift Handover",
+    "from": "Tomasz W.",
+    "sent": "2026-11-25T06:40:00Z",
+    "text": "Does anyone know if the Gamma submissions went through yesterday? I haven't seen confirmations.",
+    "relevant": false,
+    "scenario": ""
+  }
+]

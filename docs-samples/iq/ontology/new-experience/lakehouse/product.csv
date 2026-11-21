@@ -1,0 +1,9 @@
+sku,brand_name,product_name,category,packs_per_bundle,bundles_per_case,cases_per_pallet,packs_per_case,packs_per_pallet,sticks_per_pack
+SKU-01,Horizon Blue,Horizon Blue KS 20,Cigarettes,10,5,20,50,1000,20
+SKU-02,Nova Gold,Nova Gold KS 20,Cigarettes,10,5,20,50,1000,20
+SKU-03,Orion Red,Orion Red KS 20,Cigarettes,10,5,20,50,1000,20
+SKU-04,Glacier Silver,Glacier Silver Super Slims 20,Cigarettes,10,4,25,40,1000,20
+SKU-05,Meridian White,Meridian White KS 20,Cigarettes,10,5,20,50,1000,20
+SKU-06,Vega Black,Vega Black KS 20,Cigarettes,10,5,20,50,1000,20
+SKU-07,Aurora Green,Aurora Green Heated Sticks 20,Heated tobacco sticks,10,5,24,50,1200,20
+SKU-08,Solstice Amber,Solstice Amber Heated Sticks 20,Heated tobacco sticks,10,5,24,50,1200,20

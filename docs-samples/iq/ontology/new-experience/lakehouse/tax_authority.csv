@@ -1,0 +1,5 @@
+authority_id,market_id,name,submission_sla_hours,contact_email
+TA-ALPHA,MKT-ALPHA,Alpha Excise Authority,24,tt-desk@excise-alpha.example.test
+TA-BETA,MKT-BETA,Beta Revenue and Stamp Office,12,trace-requests@revenue-beta.example.test
+TA-GAMMA,MKT-GAMMA,Gamma Customs and Excise Agency,4,no-reply@excise-gamma.example.test
+TA-DELTA,MKT-DELTA,Delta Tax Administration,48,tracking@tax-delta.example.test
