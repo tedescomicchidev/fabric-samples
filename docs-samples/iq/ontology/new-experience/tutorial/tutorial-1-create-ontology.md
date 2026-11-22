@@ -4,6 +4,10 @@
 In this step of the tutorial, you create a new ontology (preview) item that represents the Track & Trace
 scenario. Then you add entity types, data bindings and relationship types to build out the ontology.
 
+> [!TIP]
+> Short on time? [The shortcut](tutorial-1-2-shortcut.md) creates the result of parts 1 and 2 with a notebook,
+> and you add three entity types in the editor.
+
 ## Create ontology (preview) item
 
 1. In your Fabric workspace, select **+ New item**.

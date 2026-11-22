@@ -4,6 +4,11 @@
 In this tutorial step, explore your ontology in different ways. View the ontology in multiple canvas views,
 explore its entity instances, and follow a pack through the aggregation hierarchy in the ontology's graph.
 
+> [!NOTE]
+> If you created the ontology with [the shortcut notebook](tutorial-1-2-shortcut.md), the entity type keys and
+> the mapping tables are already set, so **Prepare the graph** is only a check. If the notebook reported
+> "Relationship bindings: direct", add the mapping tables as described in that section.
+
 ## Explore canvas views
 
 The home configuration canvas of ontology contains three views: full ontology, neighborhood and inheritance. To

@@ -16,11 +16,12 @@ data, adds the demo agents, and ends with the demo script and what each scene de
 | `lakehouse/` | Upload to the lakehouse **TrackTraceLH** and load each file (and the `pack` folder) to a table |
 | `eventhouse/` | Load into the eventhouse **TrackTraceEH** as tables `TraceEvent` and `LineScannerTelemetry` |
 | `notebooks/create_semantic_model.ipynb` | Run in Fabric to create the semantic model **TrackTraceKPIs** (replaces `SalesReport.pbix`) |
+| `notebooks/create_ontology.ipynb` | Optional: run in Fabric to create the ontology **TrackTraceOntology** of parts 1 and 2 in one step ([shortcut](tutorial/tutorial-1-2-shortcut.md)) |
 | `semantic-model/` | Source data of that semantic model, for reference. Don't upload it. |
 | `work-context/` | Emails, Teams messages and SOPs for the Work IQ part of the demo |
 | [`tutorial/`](tutorial/README.md) | **The tutorial**: parts 0 to 4 follow the Learn ontology tutorial with this data, part 5 builds the demo agents, part 6 is the demo script with what each scene demonstrates |
 | [`README_data.md`](README_data.md) | Row counts, seeded scenarios S1-S6 and design choices |
-| `generator/` | `generate_data.py` (fixed seed), `validate_data.py`, and the tutorial templates |
+| `generator/` | `generate_data.py` (fixed seed), `validate_data.py`, the tutorial templates, and `ontology_spec.py` (the ontology that the notebook creates) |
 
 Data snapshot: **2026-11-25 07:00 UTC**. To move the storyline to another week, run
 `python generator/generate_data.py --as-of <a Wednesday>T07:00:00Z`.

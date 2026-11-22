@@ -12,6 +12,8 @@ import shutil
 from collections import Counter
 from datetime import timedelta
 
+import ontology_spec
+
 TEMPLATE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tutorial_templates")
 PLACEHOLDER = re.compile(r"\{\{\s*([a-z0-9_]+)\s*\}\}")
 
@@ -207,7 +209,49 @@ def build_context(g, factories, partners):
     ctx["teams_relevant"] = ", ".join(m["message_id"] for m in trel)
     ctx["teams_table"] = "| Message | Sent (UTC) | From | Text |\n|---|---|---|---|\n" + "\n".join(
         f"| {m['message_id']} | {_sent(m['sent'])} | {m['from']} | {m['text']} |" for m in trel)
+
+    ctx.update(_ontology_context())
     return ctx
+
+
+def _and(items):
+    items = list(items)
+    return ", ".join(items[:-1]) + " and " + items[-1] if len(items) > 1 else "".join(items)
+
+
+def _ontology_context():
+    """Numbers and texts of the shortcut page, from ontology_spec.py (the spec the notebook embeds)."""
+    ents = {e["name"]: e for e in ontology_spec.ENTITY_TYPES}
+    lake = [e for e in ontology_spec.ENTITY_TYPES if e["source"] == "lakehouse"]
+    base = [e["name"] for e in lake if not e["base"]]
+    inherited = [e["name"] for e in lake if e["base"]]
+    rels = ontology_spec.RELATIONSHIP_TYPES
+    lake_rels = [r for r in rels if r["source"] == "lakehouse"]
+    later = [r for r in rels if r["source"] != "lakehouse"]
+    te, st = ents["Trace Event"], ents["Scanner Telemetry"]
+    rows = "\n".join(
+        f"| {r['name']}{' (optional)' if r['optional'] else ''} | {r['origin']} ({r['origin_property']}) | "
+        f"{r['target']} ({r['target_property']}) | {r['description'] or ''} |" for r in later)
+    return {
+        "onto_name": ontology_spec.ONTOLOGY_NAME,
+        "onto_base_count": len(base),
+        "onto_inherited_count": len(inherited),
+        "onto_entity_count": len(lake),
+        "onto_inherited_list": _and(inherited),
+        "onto_rel_count": len(lake_rels),
+        "onto_rel_required": sum(1 for r in lake_rels if not r["optional"]),
+        "onto_rel_optional": sum(1 for r in lake_rels if r["optional"]),
+        "onto_rule_count": len(ontology_spec.RULES),
+        "onto_later_entities": _and(e["name"] for e in ontology_spec.ENTITY_TYPES if e["source"] != "lakehouse"),
+        "onto_later_rels": _and(r["name"] for r in later if not r["optional"]),
+        "onto_te_desc": te["description"],
+        "onto_te_syn": ", ".join(te["synonyms"]),
+        "onto_st_desc": st["description"],
+        "onto_st_read_rate": st["property_descriptions"]["read_rate_pct"],
+        "onto_st_station_mode": st["property_descriptions"]["station_mode"],
+        "onto_later_rel_table": "| Relationship type name | Origin entity type (Property) | Target entity type (Property) "
+                                "| Description |\n|---|---|---|---|\n" + rows,
+    }
 
 
 def render(text, ctx, name):

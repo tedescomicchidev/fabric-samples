@@ -11,6 +11,7 @@ built on top of it.
 | [0. Introduction and environment setup](tutorial-0-introduction.md) | Read what the demo must show, meet the persona, load the sample data | Lakehouse **TrackTraceLH**, eventhouse **TrackTraceEH**, semantic model **TrackTraceKPIs** |
 | [1. Create an ontology](tutorial-1-create-ontology.md) | Create entity types, data bindings and relationship types | Ontology **TrackTraceOntology** |
 | [2. Enrich the ontology](tutorial-2-enrich-ontology.md) | Add descriptions, synonyms and business rules | An ontology that knows what an aggregation mismatch is |
+| [Shortcut for parts 1 and 2](tutorial-1-2-shortcut.md) (optional) | Run a notebook that creates and enriches the ontology, then add three entity types in the editor | The same ontology as after part 2 |
 | [3. Explore the ontology](tutorial-3-explore-ontology.md) | Use the canvas views, the entity instances and the graph | The pack-to-warehouse trace as a graph path |
 | [4. Use the ontology agent](tutorial-4-use-agent.md) | Ask the scenario questions in natural language | Answers you can check against the expected values |
 | [5. Build the demo agents](tutorial-5-build-demo-agents.md) | Create the data agents, load the work context, build the Copilot agent | T&T Data Agent, Supply Chain Agent, T&T Copilot |
@@ -18,7 +19,8 @@ built on top of it.
 | [7. Conclude and clean up](tutorial-7-conclusion.md) | Recap, open points to validate, clean up | |
 
 Parts 0 to 4 follow the Learn tutorial step by step. Keep it open next to this one for the screenshots.
-Parts 5 and 6 are specific to this demo.
+Parts 5 and 6 are specific to this demo. To rebuild the environment quickly, use the shortcut instead of parts 1
+and 2.
 
 **Data snapshot:** 2026-11-25 07:00 UTC. The storyline day is Wednesday 25 November 2026, and "yesterday" is Tuesday 24 November 2026.
 

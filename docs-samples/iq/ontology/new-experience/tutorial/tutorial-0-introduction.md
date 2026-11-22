@@ -257,3 +257,6 @@ notebook instead, so you don't need Power BI Desktop.
 
 Now your sample scenario is set up in Fabric. Next, create an ontology (preview) item and add elements to it
 that connect to these data sources: [Create an ontology](tutorial-1-create-ontology.md).
+
+If you're short on time, [the shortcut](tutorial-1-2-shortcut.md) creates the ontology of parts 1 and 2 with a
+notebook, and you continue with part 3.

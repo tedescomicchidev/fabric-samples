@@ -13,7 +13,9 @@ from __future__ import annotations
 import argparse
 import csv
 import glob
+import json
 import os
+import re
 import sys
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
@@ -45,6 +47,99 @@ class Checker:
         print(f"[{'PASS' if ok else 'FAIL'}] {name}" + (f" - {detail}" if detail else ""))
         if not ok:
             self.failures += 1
+
+
+def _norm(text):
+    return re.sub(r"\s+", " ", text.replace("*", "")).strip()
+
+
+def _complete(text, page):
+    """The whole text is in the page: it ends where a table cell, a synonym list or a step ends."""
+    return re.search(re.escape(_norm(text)) + r"(?= \|| Synonyms:| 1\. Select| Low days of cover :)", page) is not None
+
+
+def check_ontology(c, data, tdir):
+    """ontology_spec.py (embedded in notebooks/create_ontology.ipynb) against the CSV files and the tutorial."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import ontology_spec as spec
+
+    def header(table):
+        path = os.path.join(data, "lakehouse", f"{table}.csv")
+        if not os.path.exists(path):
+            path = sorted(glob.glob(os.path.join(data, "lakehouse", table, "part-*.csv")))[0]
+        with open(path, encoding="utf-8") as fh:
+            return next(csv.reader(fh))
+
+    def page(name):
+        path = os.path.join(tdir, name)
+        return open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+
+    p1, p2 = _norm(page("tutorial-1-create-ontology.md")), _norm(page("tutorial-2-enrich-ontology.md"))
+    p3 = page("tutorial-3-explore-ontology.md")
+    ents = {e["name"]: e for e in spec.ENTITY_TYPES}
+    bad_cols, bad_docs = [], []
+    for e in spec.ENTITY_TYPES:
+        if e["source"] == "lakehouse":
+            cols = header(e["table"])
+            renames = (ents[e["base"]] if e["base"] else e)["renames"]
+            props = [renames.get(x, x) for x in cols]
+            bad_cols += [f"{e['name']}.{x}" for x in list(e["renames"]) + [e["key"]] + list(e["property_descriptions"])
+                         if x not in (cols if x in e["renames"] else props)]
+            if e["base"]:
+                row = f"| {e['name']} | {e['base']} | TrackTraceLH > {e['table']} | (inherited) |"
+            else:
+                ren = ", ".join(f"{k} → {v}" for k, v in e["renames"].items())
+                row = _norm(f"| {e['name']} | | TrackTraceLH > {e['table']} | {ren} |")
+            if e["name"] not in ("Warehouse", "Distributor") and row not in p1:
+                bad_docs.append(f"part 1 row of {e['name']}")
+        elif e["source"] == "eventhouse" and f"| {e['name']} | | TrackTraceEH > {e['table']} |" not in p1:
+            bad_docs.append(f"part 1 row of {e['name']}")
+        texts = [e["description"]] + list(e["property_descriptions"].values())
+        texts += [f"{k} : {v}" for k, v in e["annotations"]]
+        texts += ["Synonyms: " + ", ".join(e["synonyms"])] if e["synonyms"] else []
+        bad_docs += [f"part 2 metadata of {e['name']}: {x[:40]}" for x in texts if x and not _complete(x, p2)]
+        if e["key"] and not any(
+                len(cells) == 2 and e["name"] in [x.strip() for x in cells[0].split(",")] and cells[1] == e["key"]
+                for cells in ([x.strip() for x in line.strip().strip("|").split("|")] for line in p3.splitlines())):
+            bad_docs.append(f"part 3 key of {e['name']}")
+    for r in spec.RELATIONSHIP_TYPES:
+        if r["mapping_table"]:
+            bad_cols += [f"{r['name']}: {r['mapping_table']}.{x}" for x in r["mapping_columns"]
+                         if x not in header(r["mapping_table"])]
+            for side, col in ((r["origin"], r["mapping_columns"][0]), (r["target"], r["mapping_columns"][1])):
+                if ents[side]["source"] != "lakehouse" or not ents[side]["key"]:
+                    bad_cols.append(f"{r['name']}: {side} has no lakehouse key for {col}")
+            mapping = f"{r['mapping_table']} ({', '.join(r['mapping_columns'])})"
+        else:
+            mapping = r["mapping_text"]
+        row = f"| {r['name']} | {r['origin']} ({r['origin_property']}) | {r['target']} ({r['target_property']}) | {mapping} |"
+        if row not in p1:
+            bad_docs.append(f"part 1 row of {r['name']}")
+        if r["description"] and not _complete(r["description"], p2):
+            bad_docs.append(f"part 2 description of {r['name']}")
+    for i, rule in enumerate(spec.RULES):
+        want = ([f"{_norm(rule['statement'])} - Linked ontology elements: " + ", ".join(rule["entities"])] if i == 0 else
+                [f"| {rule['name']} | {_norm(rule['statement'])} | {', '.join(rule['entities'])} |"])
+        bad_docs += [f"part 2 rule {rule['name']}" for w in want if w not in p2]
+        bad_docs += [f"rule {rule['name']}: unknown entity type {x}" for x in rule["entities"] if x not in ents]
+    c.check("Ontology spec: columns, keys and mapping tables exist in the CSV files", not bad_cols,
+            ", ".join(bad_cols[:5]))
+    c.check("Ontology spec: matches the tutorial (parts 1 to 3)", not bad_docs, ", ".join(bad_docs[:5]))
+
+    nb_path = os.path.join(data, "notebooks", "create_ontology.ipynb")
+    ok, detail = os.path.exists(nb_path), "missing"
+    if ok:
+        nb = json.load(open(nb_path, encoding="utf-8"))
+        code = ["".join(x["source"]) for x in nb["cells"] if x["cell_type"] == "code"]
+        try:
+            for src in code:
+                compile(src, "create_ontology.ipynb", "exec")
+            embedded = json.loads(re.search(r'SPEC = json.loads\(r"""\n(.*)\n"""\)', "\n".join(code), re.S).group(1))
+            ok = embedded == json.loads(json.dumps(spec.notebook_spec()))
+            detail = "" if ok else "embedded spec differs from ontology_spec.py"
+        except (SyntaxError, AttributeError) as e:
+            ok, detail = False, str(e)
+    c.check("Notebook create_ontology.ipynb: compiles and embeds the current ontology spec", ok, detail)
 
 
 def main():
@@ -265,10 +360,12 @@ def main():
     tdir = os.path.join(args.data, "tutorial")
     pages = sorted(f for f in os.listdir(tdir) if f.endswith(".md")) if os.path.isdir(tdir) else []
     text = "".join(open(os.path.join(tdir, f), encoding="utf-8").read() for f in pages)
-    c.check("Tutorial: all pages rendered, no placeholders left", len(pages) == 9 and "{{" not in text,
+    c.check("Tutorial: all pages rendered, no placeholders left", len(pages) == 10 and "{{" not in text,
             f"{len(pages)} pages")
     if m:
         c.check("Tutorial: S4 pack UID matches README_data.md", uid in text, uid)
+
+    check_ontology(c, args.data, tdir)
 
     print(f"\n{'All checks passed.' if c.failures == 0 else f'{c.failures} check(s) failed.'}")
     sys.exit(1 if c.failures else 0)
