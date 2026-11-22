@@ -184,6 +184,12 @@ For parts 5 and 6 (the demo agents):
 
 ## Download sample data
 
+> [!TIP]
+> To skip the manual setup in the rest of this part, run one notebook instead:
+> [Shortcut: Set up parts 0 to 2 with one notebook](tutorial-0-2-shortcut.md). It creates the lakehouse, the
+> eventhouse and the semantic model, loads the sample data from GitHub, and can also create the ontology of parts 1
+> and 2.
+
 Download the `docs-samples/iq/ontology/new-experience` folder (the [parent of this `tutorial` folder](../)) from the
 `pmi-track-and-trace-ontology` branch of this repository. On GitHub, select **Code > Download ZIP**, or fetch
 only this folder:
@@ -258,4 +264,5 @@ Now your sample scenario is set up in Fabric. Next, create an ontology (preview)
 that connect to these data sources: [Create an ontology](tutorial-1-create-ontology.md).
 
 If you're short on time, [the shortcut](tutorial-1-2-shortcut.md) creates the ontology of parts 1 and 2 with a
-notebook, and you continue with part 3.
+notebook, and you continue with part 3. [The setup notebook](tutorial-0-2-shortcut.md) does this part and
+parts 1 and 2 in one run.

@@ -142,6 +142,47 @@ def check_ontology(c, data, tdir):
     c.check("Notebook create_ontology.ipynb: compiles and embeds the current ontology spec", ok, detail)
 
 
+def check_setup(c, data):
+    """notebooks/setup_workspace.ipynb against the data files, ontology_spec.py and the generator."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import ontology_spec as spec
+    import setup_notebook as sn
+
+    path = os.path.join(data, "notebooks", sn.NOTEBOOK)
+    if not os.path.exists(path):
+        c.check(f"Notebook {sn.NOTEBOOK}: exists", False, "missing")
+        return
+    text = open(path, encoding="utf-8").read()
+    code = ["".join(x["source"]) for x in json.loads(text)["cells"] if x["cell_type"] == "code"]
+    expected = sn.build_manifest(data)
+    ok, detail = True, ""
+    try:
+        for src in code:
+            compile(src, sn.NOTEBOOK, "exec")
+        embedded = json.loads(re.search(r'MANIFEST = json.loads\(r"""\n(.*?)\n"""\)', "\n".join(code), re.S).group(1))
+        if embedded != expected:
+            ok, detail = False, "the embedded manifest differs from the data files"
+    except (SyntaxError, AttributeError) as e:
+        ok, detail = False, str(e)
+    c.check(f"Notebook {sn.NOTEBOOK}: compiles, and its manifest matches the data files (checksums, rows, columns)",
+            ok, detail)
+    current = text == sn.notebook_text(data)
+    c.check(f"Notebook {sn.NOTEBOOK}: up to date with the generator (settings, reused cells, ontology spec)",
+            current, "" if current else "run generate_data.py again")
+
+    # Keys and mapping columns must load as strings, so that the relationship types of the ontology bind.
+    types = {t: dict(v["columns"]) for t, v in expected["lakehouse_tables"].items()}
+    bad = [f"{e['table']}.{e['key']}" for e in spec.ENTITY_TYPES
+           if e["source"] == "lakehouse" and e["key"] and types[e["table"]].get(e["key"]) != "string"]
+    bad += [f"{r['mapping_table']}.{x}" for r in spec.RELATIONSHIP_TYPES if r["mapping_table"]
+            for x in r["mapping_columns"] if types[r["mapping_table"]].get(x) != "string"]
+    c.check(f"Notebook {sn.NOTEBOOK}: entity type keys and mapping columns load as strings", not bad,
+            ", ".join(bad[:5]))
+    missing = [t for t in sorted({e["table"] for e in spec.ENTITY_TYPES if e["source"] == "eventhouse"})
+               if t not in expected["eventhouse_tables"]]
+    c.check(f"Notebook {sn.NOTEBOOK}: loads the eventhouse tables of the ontology", not missing, ", ".join(missing))
+
+
 def main():
     ap = argparse.ArgumentParser()
     here = os.path.dirname(os.path.abspath(__file__))
@@ -360,12 +401,13 @@ def main():
     tdir = os.path.join(args.data, "tutorial")
     pages = sorted(f for f in os.listdir(tdir) if f.endswith(".md")) if os.path.isdir(tdir) else []
     text = "".join(open(os.path.join(tdir, f), encoding="utf-8").read() for f in pages)
-    c.check("Tutorial: all pages rendered, no placeholders left", len(pages) == 10 and "{{" not in text,
+    c.check("Tutorial: all pages rendered, no placeholders left", len(pages) == 11 and "{{" not in text,
             f"{len(pages)} pages")
     if m:
         c.check("Tutorial: S4 pack UID matches README_data.md", uid in text, uid)
 
     check_ontology(c, args.data, tdir)
+    check_setup(c, args.data)
 
     print(f"\n{'All checks passed.' if c.failures == 0 else f'{c.failures} check(s) failed.'}")
     sys.exit(1 if c.failures else 0)

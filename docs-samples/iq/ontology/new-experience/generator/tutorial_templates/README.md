@@ -10,6 +10,7 @@ built on top of it.
 | [0. Introduction and environment setup](tutorial-0-introduction.md) | Read what the demo must show, meet the persona, load the sample data | Lakehouse **TrackTraceLH**, eventhouse **TrackTraceEH**, semantic model **TrackTraceKPIs** |
 | [1. Create an ontology](tutorial-1-create-ontology.md) | Create entity types, data bindings and relationship types | Ontology **TrackTraceOntology** |
 | [2. Enrich the ontology](tutorial-2-enrich-ontology.md) | Add descriptions, synonyms and business rules | An ontology that knows what an aggregation mismatch is |
+| [Shortcut for parts 0 to 2](tutorial-0-2-shortcut.md) (optional) | Run one notebook that sets up part 0 and creates the ontology of parts 1 and 2, then add three entity types in the editor | The same items as after part 2 |
 | [Shortcut for parts 1 and 2](tutorial-1-2-shortcut.md) (optional) | Run a notebook that creates and enriches the ontology, then add three entity types in the editor | The same ontology as after part 2 |
 | [3. Explore the ontology](tutorial-3-explore-ontology.md) | Use the canvas views, the entity instances and the graph | The pack-to-warehouse trace as a graph path |
 | [4. Use the ontology agent](tutorial-4-use-agent.md) | Ask the scenario questions in natural language | Answers you can check against the expected values |
@@ -18,8 +19,8 @@ built on top of it.
 | [7. Conclude and clean up](tutorial-7-conclusion.md) | Recap, open points to validate, clean up | |
 
 Parts 0 to 4 follow the Learn tutorial step by step. Keep it open next to this one for the screenshots.
-Parts 5 and 6 are specific to this demo. To rebuild the environment quickly, use the shortcut instead of parts 1
-and 2.
+Parts 5 and 6 are specific to this demo. To set up or rebuild the environment quickly, use the setup notebook
+instead of parts 0 to 2, or the shortcut instead of parts 1 and 2.
 
 **Data snapshot:** {{as_of}}. The storyline day is {{today_long}}, and "yesterday" is {{yday_long}}.
 

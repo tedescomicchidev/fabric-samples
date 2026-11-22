@@ -172,6 +172,12 @@ if left_out:
     print("Left out (unsupported column types):", ", ".join(left_out))
 '''
 
+# The setup notebook (setup_notebook.py) reuses NB_CONNECT in two pieces: the REST helpers early, the lakehouse
+# reading in the ontology section. Splitting the text keeps create_ontology.ipynb unchanged.
+_COLUMNS_START = NB_CONNECT.index("lakehouse = next(")
+NB_HELPERS = NB_CONNECT[NB_CONNECT.index("\n") + 1:_COLUMNS_START]
+NB_COLUMNS = NB_CONNECT[:NB_CONNECT.index("\n") + 1] + NB_CONNECT[_COLUMNS_START:]
+
 NB_BUILD = r'''# Build the ontology definition (TMDL parts) from SPEC and the lakehouse columns.
 T = "\t"
 SIMPLE_NAME = re.compile(r"[A-Za-z_][A-Za-z0-9_]*$")

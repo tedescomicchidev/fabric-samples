@@ -13,6 +13,7 @@ from collections import Counter
 from datetime import timedelta
 
 import ontology_spec
+import setup_notebook
 
 TEMPLATE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tutorial_templates")
 PLACEHOLDER = re.compile(r"\{\{\s*([a-z0-9_]+)\s*\}\}")
@@ -275,6 +276,7 @@ def render(text, ctx, name):
 def write_tutorial(g, out, factories, partners):
     """Render every template into <out>/tutorial/ and return the written file names."""
     ctx = build_context(g, factories, partners)
+    ctx.update(setup_notebook.tutorial_context(out))
     target = os.path.join(out, "tutorial")
     shutil.rmtree(target, ignore_errors=True)
     os.makedirs(target)

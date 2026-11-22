@@ -43,6 +43,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import docs_templates  # noqa: E402
 import ontology_notebook  # noqa: E402
+import setup_notebook  # noqa: E402
 import tutorial_docs  # noqa: E402
 import work_context  # noqa: E402
 
@@ -1132,6 +1133,7 @@ def main():
     docs_templates.write_notebook(g, os.path.join(out, "notebooks", "create_semantic_model.ipynb"),
                                   COLUMNS["production_line_daily"])
     ontology_notebook.write_notebook(os.path.join(out, "notebooks", "create_ontology.ipynb"))
+    setup_notebook.write_notebook(out, os.path.join(out, "notebooks", setup_notebook.NOTEBOOK))
     docs_templates.write_readme_data(g, os.path.join(out, "README_data.md"), counts,
                                      {"pack": pack_parts, "trace_event": trace_parts})
     stale_guide = os.path.join(out, "TUTORIAL_GUIDE.md")  # replaced by tutorial/

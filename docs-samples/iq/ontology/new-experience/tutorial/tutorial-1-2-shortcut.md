@@ -37,6 +37,8 @@ documented definition format yet (November 2026), so the notebook doesn't guess 
 
 - Part 0 is complete: the lakehouse **TrackTraceLH** with its 18 tables under **dbo**, the eventhouse
   **TrackTraceEH** with **TraceEvent** and **LineScannerTelemetry**, and the semantic model **TrackTraceKPIs**.
+  If you haven't done part 0 yet, use [the setup notebook](tutorial-0-2-shortcut.md) instead: it does part 0 and
+  this page in one run.
 - The workspace doesn't have an ontology called **TrackTraceOntology** yet, or only an empty one.
 - You're a contributor (or higher) in the workspace.
 
